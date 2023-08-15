@@ -148,8 +148,12 @@ void Handle::wait() {
 }
 
 void Handle::kill(){
-  if(pid > 0)
-    ::kill(pid, SIGTERM);
+  if(pid > 0){
+    int   status;
+    auto res = waitpid(pid, &status, WNOHANG);
+    if(res == 0)
+      ::kill(pid, SIGTERM);
+  }
 }
 
 std::ostream& operator<<(std::ostream& os, const Handle& handle) {
