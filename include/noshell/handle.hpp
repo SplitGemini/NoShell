@@ -91,6 +91,7 @@ struct Handle {
   long major_faults() const { return resources.ru_majflt; }
 
   void wait();
+  void kill();
 };
 
 std::ostream& operator<<(std::ostream& os, const Handle& handle);
@@ -150,6 +151,7 @@ public:
 
   void push_handle(Handle&& h) { handles.push_back(std::move(h)); }
   void wait() { for(auto& h : handles) h.wait(); }
+  void cancel() { for(auto& h : handles) h.kill(); }
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Exit& exit) {

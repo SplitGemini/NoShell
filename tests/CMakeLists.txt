@@ -20,7 +20,8 @@ list(APPEND NOSHELL_TESTS_LIST
     test_literal.cc
     test_pipeline.cc
     test_resources.cc
-    test_simple_command.cc)
+    test_simple_command.cc
+    test_cancel.cc)
 
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)

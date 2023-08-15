@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "Doxyfile": "ini",
+        "system_error": "c",
+        "gtest.h": "c"
+    }
+}

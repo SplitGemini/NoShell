@@ -13,7 +13,7 @@ check_PROGRAMS = kill_self puts_to check_open_fd
 
 # test programs
 TESTS = test_fd_type test_simple_command test_cmd_redirection test_pipeline	\
-        test_extra_fds test_literal test_error test_resources
+        test_extra_fds test_literal test_error test_resources test_cancel.cc
 check_PROGRAMS += $(TESTS)
 LDADD = ../libnoshell.la  libtest_misc.la
 
